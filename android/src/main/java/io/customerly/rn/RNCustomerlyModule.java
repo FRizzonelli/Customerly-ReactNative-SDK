@@ -2,8 +2,8 @@
 package io.customerly.rn;
 
 import android.app.Activity;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 import com.facebook.react.bridge.Callback;
 import com.facebook.react.bridge.Promise;
@@ -119,12 +119,7 @@ public class RNCustomerlyModule extends ReactContextBaseJavaModule {
      */
     @ReactMethod
     public void logoutUser() {
-        Customerly.logoutUser(new Function0<Unit>() {
-            @Override
-            public Unit invoke() {
-                return null;
-            }
-        });
+        Customerly.logoutUser(null);
     }
 
     /**
