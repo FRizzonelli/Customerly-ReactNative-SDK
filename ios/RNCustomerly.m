@@ -1,7 +1,6 @@
 #import "RNCustomerly.h"
 #import "UIWindow+Customerly.h"
 #import <React/RCTBridgeModule.h>
-//#import <CustomerlySDK/CustomerlySDK-umbrella.h>
 
 @implementation RNCustomerly
 
@@ -13,12 +12,6 @@
 }
 
 RCT_EXPORT_MODULE()
-
-RCT_REMAP_METHOD(configureWithAppId, appId:(NSString* _Nonnull)appId)
-{
-    [[Customerly sharedInstance] configureWithAppId:appId widgetColor:[UIColor colorWithRed:0.05 green:0.59 blue:0.84 alpha:1.0]];
-    [[Customerly sharedInstance] activateApp];
-}
 
 RCT_REMAP_METHOD(registerUser, email:(NSString* _Nonnull)email userId: (NSString* _Nullable)userId name: (NSString* _Nullable)name attributes: (NSDictionary* _Nullable)attributes company: (NSDictionary* _Nullable)company registerUserWithResolver:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject)
 {
